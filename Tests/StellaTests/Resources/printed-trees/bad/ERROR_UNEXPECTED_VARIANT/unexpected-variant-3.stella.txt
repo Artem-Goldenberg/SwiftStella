@@ -1,0 +1,85 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  ▿ extensions: 2 elements
+    ▿ Stella.LanguageExtension
+      ▿ names: 1 element
+        ▿ Stella.LanguageExtension.Name
+          - value: "#lists"
+    ▿ Stella.LanguageExtension
+      ▿ names: 1 element
+        ▿ Stella.LanguageExtension.Name
+          - value: "#variants"
+  ▿ declarations: 2 elements
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "proc"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "list"
+            ▿ type: Stella.Type.list
+              ▿ list: (1 element)
+                - of: Stella.Type.bool
+        ▿ returnType: Optional(Stella.Type.nat)
+          - some: Stella.Type.nat
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.if
+          ▿ if: (3 elements)
+            ▿ condition: Stella.Expression.head
+              ▿ head: Stella.Expression.var
+                ▿ var: Stella.Identifier
+                  - value: "list"
+            ▿ then: Stella.Expression.constInt
+              - constInt: 0
+            ▿ else: Stella.Expression.if
+              ▿ if: (3 elements)
+                ▿ condition: Stella.Expression.head
+                  ▿ head: Stella.Expression.var
+                    ▿ var: Stella.Identifier
+                      - value: "list"
+                ▿ then: Stella.Expression.succ
+                  ▿ succ: Stella.Expression.constInt
+                    - constInt: 0
+                ▿ else: Stella.Expression.succ
+                  ▿ succ: Stella.Expression.succ
+                    ▿ succ: Stella.Expression.constInt
+                      - constInt: 0
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "n"
+            - type: Stella.Type.nat
+        ▿ returnType: Optional(Stella.Type.nat)
+          - some: Stella.Type.nat
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.application
+          ▿ application: (2 elements)
+            ▿ .0: Stella.Expression.var
+              ▿ var: Stella.Identifier
+                - value: "proc"
+            ▿ .1: 1 element
+              ▿ Stella.Expression.consList
+                ▿ consList: (2 elements)
+                  - .0: Stella.Expression.constFalse
+                  ▿ .1: Stella.Expression.list
+                    ▿ list: 4 elements
+                      - Stella.Expression.constTrue
+                      - Stella.Expression.constFalse
+                      ▿ Stella.Expression.variant
+                        ▿ variant: (2 elements)
+                          ▿ .0: Stella.Identifier
+                            - value: "value"
+                          ▿ .1: Optional(Stella.Expression.var(Stella.Identifier(value: "n")))
+                            ▿ some: Stella.Expression.var
+                              ▿ var: Stella.Identifier
+                                - value: "n"
+                      - Stella.Expression.constFalse

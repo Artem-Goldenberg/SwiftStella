@@ -4,17 +4,17 @@ public protocol Syntax {
     static var documentingName: String { get }
 }
 
-extension Syntax {
-    public var description: String {
-        Self.documentingName
-    }
-}
-
+/// Stella Identifier
 public struct Identifier: Syntax {
     let value: String
     public static let documentingName = "identifier"
 }
 
+/**
+ The root syntax element of Stella language.
+
+ Use `Program.parser` attribute to get a Parsec parser for the whole Stella programs.
+ */
 public struct Program: Syntax {
     public let languageDeclaration: LanguageDeclaration
     public let extensions: [LanguageExtension]
@@ -23,12 +23,14 @@ public struct Program: Syntax {
     public static let documentingName = "program"
 }
 
+/// `language core;` at the start of the program
 public enum LanguageDeclaration: Syntax {
     case languageCore
 
     public static let documentingName = "language declaration"
 }
 
+/// a single `extend with ...;` at the start of the program
 public struct LanguageExtension: Syntax {
     public let names: [Name]
 
@@ -39,7 +41,14 @@ public struct LanguageExtension: Syntax {
     public static let documentingName = "language extension"
 }
 
+/**
+ Cases of that enum represent all declarations in Stella.
+
+ We do not create separate structs for each declaration like the function declaration below,
+ instead we are using different associated values for each enum case to store the tree.
+*/
 public enum Declaration: Syntax {
+    /// Notice here, how each attribute of the function is stored like an associated value of this case
     indirect case function(
         annotations: [Annotation],
         name: Identifier,
@@ -77,6 +86,9 @@ public enum Declaration: Syntax {
     public static let documentingName = "declaration"
 }
 
+/**
+ Enum representing all Stella's expressions, including builtin functions like `Nat::rec`
+ */
 public indirect enum Expression: Syntax {
     case sequence(Expression, Expression)
     case assign(Expression, Expression)
@@ -139,6 +151,7 @@ public indirect enum Expression: Syntax {
     public static let documentingName = "expression"
 }
 
+/// Enum for Stella's patterns
 public indirect enum Pattern: Syntax {
     case cast(Pattern, as: Type)
     case ascription(Pattern, Type)
@@ -159,6 +172,13 @@ public indirect enum Pattern: Syntax {
     public static let documentingName = "pattern"
 }
 
+/// Memory address in the form of `#...;`
 public struct MemoryAddress {
     let value: String
+}
+
+extension Syntax {
+    public var description: String {
+        Self.documentingName
+    }
 }

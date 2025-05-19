@@ -23,9 +23,18 @@ let package = Package(
                 .product(name: "SwiftParsec", package: "SwiftParsec")
             ]
         ),
+        .executableTarget(
+            name: "TestGenerator",
+            dependencies: ["Stella"],
+            swiftSettings: [.unsafeFlags(["-parse-as-library"])]
+        ),
         .testTarget(
             name: "StellaTests",
-            dependencies: ["Stella"]
+            dependencies: ["Stella"],
+            resources: [
+                .copy("Resources/stella-tests"),
+                .copy("Resources/printed-trees")
+            ]
         ),
     ]
 )

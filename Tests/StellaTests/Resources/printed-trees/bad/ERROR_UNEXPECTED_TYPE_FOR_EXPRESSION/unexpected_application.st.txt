@@ -1,0 +1,30 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  - extensions: 0 elements
+  ▿ declarations: 1 element
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "f"
+            ▿ type: Stella.Type.function
+              ▿ function: (2 elements)
+                ▿ from: 1 element
+                  - Stella.Type.bool
+                - to: Stella.Type.bool
+        ▿ returnType: Optional(Stella.Type.bool)
+          - some: Stella.Type.bool
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.application
+          ▿ application: (2 elements)
+            ▿ .0: Stella.Expression.var
+              ▿ var: Stella.Identifier
+                - value: "f"
+            ▿ .1: 1 element
+              ▿ Stella.Expression.constInt
+                - constInt: 0

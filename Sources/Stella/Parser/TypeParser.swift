@@ -3,7 +3,7 @@
 extension Stella.`Type`: StaticParsable {
     // thiss is no jokes about calling a recursive parser this way ONLY
     // if you just try to call it recursively as a static variable, it will crash hard
-    static let parser: Parser<Self> = .recursive { typeParser in
+    public static let parser: Parser<Self> = .recursive { typeParser in
         alternatives {
             Keyword.auto.map { Self.auto } <?> "auto type"
             function(using: typeParser)

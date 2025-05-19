@@ -2,21 +2,21 @@
 
 // Generic ParserBuilders for the SwiftParsec parsers
 
-typealias Source = String
-typealias Parser<Result> = GenericParser<Source, (), Result>
+public typealias Source = String
+public typealias Parser<Result> = GenericParser<Source, (), Result>
 
-protocol Parsable {
+public protocol Parsable {
     associatedtype Result = Self
     var parser: Parser<Result> { get }
 }
 
-protocol StaticParsable: Parsable {
+public protocol StaticParsable: Parsable {
     @ParserBuilder
     static var parser: Parser<Result> { get }
 }
 
 extension Parsable where Self: StaticParsable {
-    var parser: Parser<Result> {
+    public var parser: Parser<Result> {
         Self.parser
     }
 }

@@ -16,7 +16,7 @@ extension Stella.Expression {
     typealias ThisParser = Parser<Self>
     typealias Operations = OperatorTable<Source, (), Self>
 
-    static let parser: ThisParser = .recursive { expression in
+    public static let parser: Parser<Self> = .recursive { expression in
         rule {
             single(using: expression)
             Sign.semicolon.parser.flatMap {
@@ -66,8 +66,8 @@ extension Stella.Expression {
                 alternatives {
                     lambda(using: expression)
                     variant(using: expression)
+                    match(using: expression)
                     list(using: expression)
-                    match(using: conditional)
                     arithmeticOperations.makeExpressionParser { arithmetic in
                         factor(using: expression)
                     }

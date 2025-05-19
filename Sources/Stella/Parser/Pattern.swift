@@ -1,7 +1,7 @@
 @preconcurrency import SwiftParsec
 
 extension Pattern: StaticParsable {
-    static let parser: Parser<Self> = table.makeExpressionParser { pattern in
+    public static let parser: Parser<Self> = table.makeExpressionParser { pattern in
         alternatives {
             pattern.inParens // can be nested in meaningless parens
 //            ascription(using: thisParser)

@@ -1,0 +1,72 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  ▿ extensions: 1 element
+    ▿ Stella.LanguageExtension
+      ▿ names: 2 elements
+        ▿ Stella.LanguageExtension.Name
+          - value: "#variants"
+        ▿ Stella.LanguageExtension.Name
+          - value: "#type-ascriptions"
+  ▿ declarations: 1 element
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "succeed"
+            - type: Stella.Type.bool
+        ▿ returnType: Optional(Stella.Type.nat)
+          - some: Stella.Type.nat
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.match
+          ▿ match: (2 elements)
+            ▿ .0: Stella.Expression.typeAscription
+              ▿ typeAscription: (2 elements)
+                ▿ .0: Stella.Expression.variant
+                  ▿ variant: (2 elements)
+                    ▿ .0: Stella.Identifier
+                      - value: "a"
+                    ▿ .1: Optional(Stella.Expression.succ(Stella.Expression.constInt(0)))
+                      ▿ some: Stella.Expression.succ
+                        ▿ succ: Stella.Expression.constInt
+                          - constInt: 0
+                ▿ .1: Stella.Type.variant
+                  ▿ variant: 2 elements
+                    ▿ (2 elements)
+                      ▿ .0: Stella.Identifier
+                        - value: "b"
+                      ▿ .1: Optional(Stella.Type.nat)
+                        - some: Stella.Type.nat
+                    ▿ (2 elements)
+                      ▿ .0: Stella.Identifier
+                        - value: "c"
+                      ▿ .1: Optional(Stella.Type.bool)
+                        - some: Stella.Type.bool
+            ▿ .1: 2 elements
+              ▿ (2 elements)
+                ▿ .0: Stella.Pattern.variant
+                  ▿ variant: (2 elements)
+                    ▿ .0: Stella.Identifier
+                      - value: "b"
+                    ▿ .1: Optional(Stella.Pattern.var(Stella.Identifier(value: "t")))
+                      ▿ some: Stella.Pattern.var
+                        ▿ var: Stella.Identifier
+                          - value: "t"
+                ▿ .1: Stella.Expression.var
+                  ▿ var: Stella.Identifier
+                    - value: "t"
+              ▿ (2 elements)
+                ▿ .0: Stella.Pattern.variant
+                  ▿ variant: (2 elements)
+                    ▿ .0: Stella.Identifier
+                      - value: "c"
+                    ▿ .1: Optional(Stella.Pattern.var(Stella.Identifier(value: "t")))
+                      ▿ some: Stella.Pattern.var
+                        ▿ var: Stella.Identifier
+                          - value: "t"
+                ▿ .1: Stella.Expression.constInt
+                  - constInt: 0

@@ -1,7 +1,7 @@
 @preconcurrency import SwiftParsec
 
 extension Program: StaticParsable {
-    static let parser: Parser<Program> = rule {
+    public static let parser: Parser<Program> = rule {
         lexer.whiteSpace // needed only at top level parser
         LanguageDeclaration.self
         LanguageExtension.parser.many
@@ -10,7 +10,7 @@ extension Program: StaticParsable {
 }
 
 extension LanguageDeclaration: StaticParsable {
-    static let parser: Parser<Self> = rule {
+    public static let parser: Parser<Self> = rule {
         Keyword.language
         Keyword.core
         Sign.semicolon
@@ -20,7 +20,7 @@ extension LanguageDeclaration: StaticParsable {
 }
 
 extension LanguageExtension: StaticParsable {
-    static let parser: Parser<Self> = rule {
+    public static let parser: Parser<Self> = rule {
         Keyword.extend
         Keyword.with
         LanguageExtension.Name.parser
@@ -31,7 +31,7 @@ extension LanguageExtension: StaticParsable {
 }
 
 extension LanguageExtension.Name: StaticParsable {
-    static let parser: Parser<Self> = rule {
+    public static let parser: Parser<Self> = rule {
         Char.hash
         CharGroup.alphaNum.with("-", "_").parser.many1
     }
@@ -43,18 +43,18 @@ extension LanguageExtension.Name: StaticParsable {
 }
 
 extension Identifier: StaticParsable {
-    static let parser: Parser<Self> = lexer.identifier.map(Self.init(value:))
+    public static let parser: Parser<Self> = lexer.identifier.map(Self.init(value:))
 }
 
 extension MemoryAddress: StaticParsable {
-    static let parser: Parser<Self> = rule {
+    public static let parser: Parser<Self> = rule {
         Sign.hexStart
         CharGroup.hexDigit.parser.many1
     }.inAngles.map { Self.init(value: String($0)) } <?> "memory address"
 }
 
 extension Declaration: StaticParsable {
-    static let parser: Parser<Self> = alternatives {
+    public static let parser: Parser<Self> = alternatives {
         Keyword.exception.parser.flatMap { () in // if starts with an `exception` word
             // equivalte to `alternatives` function, just shorter here
             exceptionType <|> exceptionVariant
@@ -177,7 +177,7 @@ extension Declaration.Annotation {
 }
 
 extension Declaration.Parameter: StaticParsable {
-    static let parser: Parser<Self> = rule {
+    public static let parser: Parser<Self> = rule {
         Identifier.self
         Sign.colon
         Type.self

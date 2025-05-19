@@ -1,0 +1,51 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  ▿ extensions: 1 element
+    ▿ Stella.LanguageExtension
+      ▿ names: 3 elements
+        ▿ Stella.LanguageExtension.Name
+          - value: "#structural-patterns"
+        ▿ Stella.LanguageExtension.Name
+          - value: "#natural-literals"
+        ▿ Stella.LanguageExtension.Name
+          - value: "#tuples"
+  ▿ declarations: 1 element
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "n"
+            - type: Stella.Type.nat
+        ▿ returnType: Optional(Stella.Type.nat)
+          - some: Stella.Type.nat
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.match
+          ▿ match: (2 elements)
+            ▿ .0: Stella.Expression.tuple
+              ▿ tuple: 2 elements
+                ▿ Stella.Expression.tuple
+                  ▿ tuple: 2 elements
+                    ▿ Stella.Expression.constInt
+                      - constInt: 0
+                    - Stella.Expression.constTrue
+                - Stella.Expression.constTrue
+            ▿ .1: 1 element
+              ▿ (2 elements)
+                ▿ .0: Stella.Pattern.tuple
+                  ▿ tuple: 2 elements
+                    ▿ Stella.Pattern.tuple
+                      ▿ tuple: 2 elements
+                        ▿ Stella.Pattern.var
+                          ▿ var: Stella.Identifier
+                            - value: "a"
+                        ▿ Stella.Pattern.var
+                          ▿ var: Stella.Identifier
+                            - value: "c"
+                    - Stella.Pattern.true
+                ▿ .1: Stella.Expression.constInt
+                  - constInt: 0

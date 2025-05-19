@@ -1,0 +1,179 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  ▿ extensions: 1 element
+    ▿ Stella.LanguageExtension
+      ▿ names: 3 elements
+        ▿ Stella.LanguageExtension.Name
+          - value: "#structural-patterns"
+        ▿ Stella.LanguageExtension.Name
+          - value: "#natural-literals"
+        ▿ Stella.LanguageExtension.Name
+          - value: "#lists"
+  ▿ declarations: 2 elements
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "test"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "n"
+            ▿ type: Stella.Type.list
+              ▿ list: (1 element)
+                - of: Stella.Type.nat
+        ▿ returnType: Optional(Stella.Type.nat)
+          - some: Stella.Type.nat
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.match
+          ▿ match: (2 elements)
+            ▿ .0: Stella.Expression.var
+              ▿ var: Stella.Identifier
+                - value: "n"
+            ▿ .1: 8 elements
+              ▿ (2 elements)
+                ▿ .0: Stella.Pattern.list
+                  - list: 0 elements
+                ▿ .1: Stella.Expression.constInt
+                  - constInt: 0
+              ▿ (2 elements)
+                ▿ .0: Stella.Pattern.list
+                  ▿ list: 1 element
+                    ▿ Stella.Pattern.var
+                      ▿ var: Stella.Identifier
+                        - value: "a"
+                ▿ .1: Stella.Expression.var
+                  ▿ var: Stella.Identifier
+                    - value: "a"
+              ▿ (2 elements)
+                ▿ .0: Stella.Pattern.list
+                  ▿ list: 2 elements
+                    ▿ Stella.Pattern.var
+                      ▿ var: Stella.Identifier
+                        - value: "a"
+                    ▿ Stella.Pattern.var
+                      ▿ var: Stella.Identifier
+                        - value: "b"
+                ▿ .1: Stella.Expression.var
+                  ▿ var: Stella.Identifier
+                    - value: "a"
+              ▿ (2 elements)
+                ▿ .0: Stella.Pattern.list
+                  ▿ list: 3 elements
+                    ▿ Stella.Pattern.var
+                      ▿ var: Stella.Identifier
+                        - value: "a"
+                    ▿ Stella.Pattern.var
+                      ▿ var: Stella.Identifier
+                        - value: "b"
+                    ▿ Stella.Pattern.var
+                      ▿ var: Stella.Identifier
+                        - value: "c"
+                ▿ .1: Stella.Expression.var
+                  ▿ var: Stella.Identifier
+                    - value: "a"
+              ▿ (2 elements)
+                ▿ .0: Stella.Pattern.cons
+                  ▿ cons: (2 elements)
+                    ▿ .0: Stella.Pattern.int
+                      - int: 1
+                    ▿ .1: Stella.Pattern.var
+                      ▿ var: Stella.Identifier
+                        - value: "xs"
+                ▿ .1: Stella.Expression.constInt
+                  - constInt: 1
+              ▿ (2 elements)
+                ▿ .0: Stella.Pattern.cons
+                  ▿ cons: (2 elements)
+                    ▿ .0: Stella.Pattern.int
+                      - int: 2
+                    ▿ .1: Stella.Pattern.cons
+                      ▿ cons: (2 elements)
+                        ▿ .0: Stella.Pattern.int
+                          - int: 3
+                        ▿ .1: Stella.Pattern.var
+                          ▿ var: Stella.Identifier
+                            - value: "xs"
+                ▿ .1: Stella.Expression.constInt
+                  - constInt: 2
+              ▿ (2 elements)
+                ▿ .0: Stella.Pattern.cons
+                  ▿ cons: (2 elements)
+                    ▿ .0: Stella.Pattern.var
+                      ▿ var: Stella.Identifier
+                        - value: "a"
+                    ▿ .1: Stella.Pattern.cons
+                      ▿ cons: (2 elements)
+                        ▿ .0: Stella.Pattern.var
+                          ▿ var: Stella.Identifier
+                            - value: "b"
+                        ▿ .1: Stella.Pattern.list
+                          ▿ list: 2 elements
+                            ▿ Stella.Pattern.int
+                              - int: 1
+                            ▿ Stella.Pattern.int
+                              - int: 2
+                ▿ .1: Stella.Expression.var
+                  ▿ var: Stella.Identifier
+                    - value: "b"
+              ▿ (2 elements)
+                ▿ .0: Stella.Pattern.cons
+                  ▿ cons: (2 elements)
+                    ▿ .0: Stella.Pattern.var
+                      ▿ var: Stella.Identifier
+                        - value: "a"
+                    ▿ .1: Stella.Pattern.cons
+                      ▿ cons: (2 elements)
+                        ▿ .0: Stella.Pattern.var
+                          ▿ var: Stella.Identifier
+                            - value: "b"
+                        ▿ .1: Stella.Pattern.cons
+                          ▿ cons: (2 elements)
+                            ▿ .0: Stella.Pattern.var
+                              ▿ var: Stella.Identifier
+                                - value: "c"
+                            ▿ .1: Stella.Pattern.var
+                              ▿ var: Stella.Identifier
+                                - value: "cs"
+                ▿ .1: Stella.Expression.var
+                  ▿ var: Stella.Identifier
+                    - value: "c"
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "n"
+            ▿ type: Stella.Type.list
+              ▿ list: (1 element)
+                - of: Stella.Type.nat
+        ▿ returnType: Optional(Stella.Type.nat)
+          - some: Stella.Type.nat
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.match
+          ▿ match: (2 elements)
+            ▿ .0: Stella.Expression.var
+              ▿ var: Stella.Identifier
+                - value: "n"
+            ▿ .1: 2 elements
+              ▿ (2 elements)
+                ▿ .0: Stella.Pattern.list
+                  - list: 0 elements
+                ▿ .1: Stella.Expression.constInt
+                  - constInt: 0
+              ▿ (2 elements)
+                ▿ .0: Stella.Pattern.cons
+                  ▿ cons: (2 elements)
+                    ▿ .0: Stella.Pattern.var
+                      ▿ var: Stella.Identifier
+                        - value: "x"
+                    ▿ .1: Stella.Pattern.var
+                      ▿ var: Stella.Identifier
+                        - value: "xs"
+                ▿ .1: Stella.Expression.constInt
+                  - constInt: 0

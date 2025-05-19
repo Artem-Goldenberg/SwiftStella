@@ -1,0 +1,52 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  ▿ extensions: 2 elements
+    ▿ Stella.LanguageExtension
+      ▿ names: 1 element
+        ▿ Stella.LanguageExtension.Name
+          - value: "#unit-type"
+    ▿ Stella.LanguageExtension
+      ▿ names: 1 element
+        ▿ Stella.LanguageExtension.Name
+          - value: "#let-bindings"
+  ▿ declarations: 1 element
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "n"
+            - type: Stella.Type.nat
+        ▿ returnType: Optional(Stella.Type.nat)
+          - some: Stella.Type.nat
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.let
+          ▿ let: (2 elements)
+            ▿ .0: 1 element
+              ▿ (2 elements)
+                ▿ .0: Stella.Pattern.var
+                  ▿ var: Stella.Identifier
+                    - value: "x"
+                ▿ .1: Stella.Expression.abstraction
+                  ▿ abstraction: (2 elements)
+                    ▿ .0: 1 element
+                      ▿ Stella.Declaration.Parameter
+                        ▿ name: Stella.Identifier
+                          - value: "a"
+                        - type: Stella.Type.nat
+                    ▿ .1: Stella.Expression.succ
+                      ▿ succ: Stella.Expression.var
+                        ▿ var: Stella.Identifier
+                          - value: "a"
+            ▿ .1: Stella.Expression.application
+              ▿ application: (2 elements)
+                ▿ .0: Stella.Expression.var
+                  ▿ var: Stella.Identifier
+                    - value: "x"
+                ▿ .1: 1 element
+                  ▿ Stella.Expression.constInt
+                    - constInt: 0

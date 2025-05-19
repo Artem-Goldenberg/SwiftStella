@@ -1,0 +1,62 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  ▿ extensions: 1 element
+    ▿ Stella.LanguageExtension
+      ▿ names: 1 element
+        ▿ Stella.LanguageExtension.Name
+          - value: "#nested-function-declarations"
+  ▿ declarations: 1 element
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "n"
+            - type: Stella.Type.nat
+        ▿ returnType: Optional(Stella.Type.nat)
+          - some: Stella.Type.nat
+        - throwTypes: 0 elements
+        ▿ body: 1 element
+          ▿ Stella.Declaration.function
+            ▿ function: (7 elements)
+              - annotations: 0 elements
+              ▿ name: Stella.Identifier
+                - value: "nested"
+              ▿ parameters: 1 element
+                ▿ Stella.Declaration.Parameter
+                  ▿ name: Stella.Identifier
+                    - value: "n"
+                  - type: Stella.Type.bool
+              ▿ returnType: Optional(Stella.Type.bool)
+                - some: Stella.Type.bool
+              - throwTypes: 0 elements
+              - body: 0 elements
+              ▿ return: Stella.Expression.if
+                ▿ if: (3 elements)
+                  ▿ condition: Stella.Expression.var
+                    ▿ var: Stella.Identifier
+                      - value: "n"
+                  ▿ then: Stella.Expression.var
+                    ▿ var: Stella.Identifier
+                      - value: "n"
+                  - else: Stella.Expression.constFalse
+        ▿ return: Stella.Expression.if
+          ▿ if: (3 elements)
+            ▿ condition: Stella.Expression.application
+              ▿ application: (2 elements)
+                ▿ .0: Stella.Expression.var
+                  ▿ var: Stella.Identifier
+                    - value: "nested"
+                ▿ .1: 1 element
+                  ▿ Stella.Expression.isZero
+                    ▿ isZero: Stella.Expression.var
+                      ▿ var: Stella.Identifier
+                        - value: "n"
+            ▿ then: Stella.Expression.constInt
+              - constInt: 0
+            ▿ else: Stella.Expression.succ
+              ▿ succ: Stella.Expression.constInt
+                - constInt: 0

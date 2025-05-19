@@ -81,22 +81,6 @@ extension Stella.Expression: StaticParsable {
             .inBrackets
             .map(Self.list) <?> "list expresssion"
     }
-//
-//    static func call<T>(
-//        of name: Keyword, mapping transform: @escaping (T) -> Self,
-//        @ParserBuilder with argumentsBuilder: () -> Parser<T>
-//    ) -> Parser<Self> {
-//        call(of: name, to: transform, with: argumentsBuilder())
-//    }
-//
-//    static func call<T>(
-//        of name: Keyword, to transform: @escaping (T) -> Self, with arguments: Parser<T>
-//    ) -> Parser<Self> {
-//        rule {
-//            name
-//            arguments.inParens
-//        }.map(transform) <?> "\(name) call expression"
-//    }
 
     @ParserBuilder
     static func tryExpression(using thisParser: Parser<Self>) -> Parser<Self> {
@@ -163,6 +147,4 @@ extension Stella.Expression: StaticParsable {
         .commaSeparated
         .inBrackets
         .map { types in { Self.typeApplication($0, types) } }
-
-
 }

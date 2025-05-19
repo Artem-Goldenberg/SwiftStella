@@ -1,0 +1,232 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  ▿ extensions: 1 element
+    ▿ Stella.LanguageExtension
+      ▿ names: 1 element
+        ▿ Stella.LanguageExtension.Name
+          - value: "#let-bindings"
+  ▿ declarations: 1 element
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "m"
+            - type: Stella.Type.nat
+        ▿ returnType: Optional(Stella.Type.bool)
+          - some: Stella.Type.bool
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.let
+          ▿ let: (2 elements)
+            ▿ .0: 1 element
+              ▿ (2 elements)
+                ▿ .0: Stella.Pattern.var
+                  ▿ var: Stella.Identifier
+                    - value: "n"
+                ▿ .1: Stella.Expression.abstraction
+                  ▿ abstraction: (2 elements)
+                    ▿ .0: 1 element
+                      ▿ Stella.Declaration.Parameter
+                        ▿ name: Stella.Identifier
+                          - value: "b"
+                        - type: Stella.Type.bool
+                    ▿ .1: Stella.Expression.if
+                      ▿ if: (3 elements)
+                        ▿ condition: Stella.Expression.var
+                          ▿ var: Stella.Identifier
+                            - value: "b"
+                        - then: Stella.Expression.constFalse
+                        - else: Stella.Expression.constTrue
+            ▿ .1: Stella.Expression.let
+              ▿ let: (2 elements)
+                ▿ .0: 1 element
+                  ▿ (2 elements)
+                    ▿ .0: Stella.Pattern.var
+                      ▿ var: Stella.Identifier
+                        - value: "c"
+                    ▿ .1: Stella.Expression.abstraction
+                      ▿ abstraction: (2 elements)
+                        ▿ .0: 1 element
+                          ▿ Stella.Declaration.Parameter
+                            ▿ name: Stella.Identifier
+                              - value: "f"
+                            ▿ type: Stella.Type.function
+                              ▿ function: (2 elements)
+                                ▿ from: 1 element
+                                  - Stella.Type.bool
+                                - to: Stella.Type.bool
+                        ▿ .1: Stella.Expression.abstraction
+                          ▿ abstraction: (2 elements)
+                            ▿ .0: 1 element
+                              ▿ Stella.Declaration.Parameter
+                                ▿ name: Stella.Identifier
+                                  - value: "g"
+                                ▿ type: Stella.Type.function
+                                  ▿ function: (2 elements)
+                                    ▿ from: 1 element
+                                      - Stella.Type.bool
+                                    - to: Stella.Type.bool
+                            ▿ .1: Stella.Expression.abstraction
+                              ▿ abstraction: (2 elements)
+                                ▿ .0: 1 element
+                                  ▿ Stella.Declaration.Parameter
+                                    ▿ name: Stella.Identifier
+                                      - value: "b"
+                                    - type: Stella.Type.bool
+                                ▿ .1: Stella.Expression.application
+                                  ▿ application: (2 elements)
+                                    ▿ .0: Stella.Expression.var
+                                      ▿ var: Stella.Identifier
+                                        - value: "f"
+                                    ▿ .1: 1 element
+                                      ▿ Stella.Expression.application
+                                        ▿ application: (2 elements)
+                                          ▿ .0: Stella.Expression.var
+                                            ▿ var: Stella.Identifier
+                                              - value: "g"
+                                          ▿ .1: 1 element
+                                            ▿ Stella.Expression.var
+                                              ▿ var: Stella.Identifier
+                                                - value: "b"
+                ▿ .1: Stella.Expression.let
+                  ▿ let: (2 elements)
+                    ▿ .0: 1 element
+                      ▿ (2 elements)
+                        ▿ .0: Stella.Pattern.var
+                          ▿ var: Stella.Identifier
+                            - value: "x"
+                        - .1: Stella.Expression.constFalse
+                    ▿ .1: Stella.Expression.let
+                      ▿ let: (2 elements)
+                        ▿ .0: 1 element
+                          ▿ (2 elements)
+                            ▿ .0: Stella.Pattern.var
+                              ▿ var: Stella.Identifier
+                                - value: "y"
+                            ▿ .1: Stella.Expression.constInt
+                              - constInt: 0
+                        ▿ .1: Stella.Expression.let
+                          ▿ let: (2 elements)
+                            ▿ .0: 1 element
+                              ▿ (2 elements)
+                                ▿ .0: Stella.Pattern.var
+                                  ▿ var: Stella.Identifier
+                                    - value: "z"
+                                ▿ .1: Stella.Expression.if
+                                  ▿ if: (3 elements)
+                                    ▿ condition: Stella.Expression.isZero
+                                      ▿ isZero: Stella.Expression.var
+                                        ▿ var: Stella.Identifier
+                                          - value: "y"
+                                    ▿ then: Stella.Expression.var
+                                      ▿ var: Stella.Identifier
+                                        - value: "x"
+                                    ▿ else: Stella.Expression.application
+                                      ▿ application: (2 elements)
+                                        ▿ .0: Stella.Expression.var
+                                          ▿ var: Stella.Identifier
+                                            - value: "n"
+                                        ▿ .1: 1 element
+                                          ▿ Stella.Expression.var
+                                            ▿ var: Stella.Identifier
+                                              - value: "x"
+                            ▿ .1: Stella.Expression.let
+                              ▿ let: (2 elements)
+                                ▿ .0: 1 element
+                                  ▿ (2 elements)
+                                    ▿ .0: Stella.Pattern.var
+                                      ▿ var: Stella.Identifier
+                                        - value: "x"
+                                    ▿ .1: Stella.Expression.if
+                                      ▿ if: (3 elements)
+                                        ▿ condition: Stella.Expression.application
+                                          ▿ application: (2 elements)
+                                            ▿ .0: Stella.Expression.var
+                                              ▿ var: Stella.Identifier
+                                                - value: "n"
+                                            ▿ .1: 1 element
+                                              ▿ Stella.Expression.application
+                                                ▿ application: (2 elements)
+                                                  ▿ .0: Stella.Expression.var
+                                                    ▿ var: Stella.Identifier
+                                                      - value: "n"
+                                                  ▿ .1: 1 element
+                                                    ▿ Stella.Expression.var
+                                                      ▿ var: Stella.Identifier
+                                                        - value: "z"
+                                        ▿ then: Stella.Expression.var
+                                          ▿ var: Stella.Identifier
+                                            - value: "n"
+                                        ▿ else: Stella.Expression.application
+                                          ▿ application: (2 elements)
+                                            ▿ .0: Stella.Expression.application
+                                              ▿ application: (2 elements)
+                                                ▿ .0: Stella.Expression.var
+                                                  ▿ var: Stella.Identifier
+                                                    - value: "c"
+                                                ▿ .1: 1 element
+                                                  ▿ Stella.Expression.application
+                                                    ▿ application: (2 elements)
+                                                      ▿ .0: Stella.Expression.application
+                                                        ▿ application: (2 elements)
+                                                          ▿ .0: Stella.Expression.var
+                                                            ▿ var: Stella.Identifier
+                                                              - value: "c"
+                                                          ▿ .1: 1 element
+                                                            ▿ Stella.Expression.var
+                                                              ▿ var: Stella.Identifier
+                                                                - value: "n"
+                                                      ▿ .1: 1 element
+                                                        ▿ Stella.Expression.var
+                                                          ▿ var: Stella.Identifier
+                                                            - value: "n"
+                                            ▿ .1: 1 element
+                                              ▿ Stella.Expression.var
+                                                ▿ var: Stella.Identifier
+                                                  - value: "n"
+                                ▿ .1: Stella.Expression.let
+                                  ▿ let: (2 elements)
+                                    ▿ .0: 1 element
+                                      ▿ (2 elements)
+                                        ▿ .0: Stella.Pattern.var
+                                          ▿ var: Stella.Identifier
+                                            - value: "y"
+                                        ▿ .1: Stella.Expression.if
+                                          ▿ if: (3 elements)
+                                            ▿ condition: Stella.Expression.var
+                                              ▿ var: Stella.Identifier
+                                                - value: "z"
+                                            ▿ then: Stella.Expression.abstraction
+                                              ▿ abstraction: (2 elements)
+                                                ▿ .0: 1 element
+                                                  ▿ Stella.Declaration.Parameter
+                                                    ▿ name: Stella.Identifier
+                                                      - value: "z"
+                                                    - type: Stella.Type.bool
+                                                ▿ .1: Stella.Expression.isZero
+                                                  ▿ isZero: Stella.Expression.var
+                                                    ▿ var: Stella.Identifier
+                                                      - value: "y"
+                                            ▿ else: Stella.Expression.var
+                                              ▿ var: Stella.Identifier
+                                                - value: "n"
+                                    ▿ .1: Stella.Expression.application
+                                      ▿ application: (2 elements)
+                                        ▿ .0: Stella.Expression.var
+                                          ▿ var: Stella.Identifier
+                                            - value: "c"
+                                        ▿ .1: 1 element
+                                          ▿ Stella.Expression.application
+                                            ▿ application: (2 elements)
+                                              ▿ .0: Stella.Expression.var
+                                                ▿ var: Stella.Identifier
+                                                  - value: "y"
+                                              ▿ .1: 1 element
+                                                ▿ Stella.Expression.isZero
+                                                  ▿ isZero: Stella.Expression.var
+                                                    ▿ var: Stella.Identifier
+                                                      - value: "m"

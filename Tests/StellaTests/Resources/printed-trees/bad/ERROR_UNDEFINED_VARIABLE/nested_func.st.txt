@@ -1,0 +1,62 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  ▿ extensions: 1 element
+    ▿ Stella.LanguageExtension
+      ▿ names: 2 elements
+        ▿ Stella.LanguageExtension.Name
+          - value: "#type-ascriptions"
+        ▿ Stella.LanguageExtension.Name
+          - value: "#nested-function-declarations"
+  ▿ declarations: 1 element
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "n"
+            - type: Stella.Type.nat
+        ▿ returnType: Optional(Stella.Type.bool)
+          - some: Stella.Type.bool
+        - throwTypes: 0 elements
+        ▿ body: 1 element
+          ▿ Stella.Declaration.function
+            ▿ function: (7 elements)
+              - annotations: 0 elements
+              ▿ name: Stella.Identifier
+                - value: "foo"
+              ▿ parameters: 1 element
+                ▿ Stella.Declaration.Parameter
+                  ▿ name: Stella.Identifier
+                    - value: "a"
+                  - type: Stella.Type.nat
+              ▿ returnType: Optional(Stella.Type.bool)
+                - some: Stella.Type.bool
+              - throwTypes: 0 elements
+              ▿ body: 1 element
+                ▿ Stella.Declaration.function
+                  ▿ function: (7 elements)
+                    - annotations: 0 elements
+                    ▿ name: Stella.Identifier
+                      - value: "bar"
+                    ▿ parameters: 1 element
+                      ▿ Stella.Declaration.Parameter
+                        ▿ name: Stella.Identifier
+                          - value: "a"
+                        - type: Stella.Type.nat
+                    ▿ returnType: Optional(Stella.Type.bool)
+                      - some: Stella.Type.bool
+                    - throwTypes: 0 elements
+                    - body: 0 elements
+                    - return: Stella.Expression.constTrue
+              - return: Stella.Expression.constTrue
+        ▿ return: Stella.Expression.application
+          ▿ application: (2 elements)
+            ▿ .0: Stella.Expression.var
+              ▿ var: Stella.Identifier
+                - value: "bar"
+            ▿ .1: 1 element
+              ▿ Stella.Expression.constInt
+                - constInt: 0

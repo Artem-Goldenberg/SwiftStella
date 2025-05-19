@@ -1,0 +1,35 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  ▿ extensions: 2 elements
+    ▿ Stella.LanguageExtension
+      ▿ names: 1 element
+        ▿ Stella.LanguageExtension.Name
+          - value: "#type-ascriptions"
+    ▿ Stella.LanguageExtension
+      ▿ names: 1 element
+        ▿ Stella.LanguageExtension.Name
+          - value: "#lists"
+  ▿ declarations: 1 element
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "n"
+            - type: Stella.Type.nat
+        ▿ returnType: Optional(Stella.Type.list(of: Stella.Type.bool))
+          ▿ some: Stella.Type.list
+            ▿ list: (1 element)
+              - of: Stella.Type.bool
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.typeAscription
+          ▿ typeAscription: (2 elements)
+            ▿ .0: Stella.Expression.list
+              - list: 0 elements
+            ▿ .1: Stella.Type.list
+              ▿ list: (1 element)
+                - of: Stella.Type.bool

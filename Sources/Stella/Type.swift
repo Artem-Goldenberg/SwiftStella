@@ -1,3 +1,9 @@
+/**
+ An Enum representing Stella's types.
+
+ We use backticks to avoid collision with Swift's `Type` keyword,
+ but xcode still likes to highlight this struct as a keyword, you can use qualified `Stella.Type` name to avoid that.
+ */
 public enum `Type`: Syntax {
     case auto
     case bool
