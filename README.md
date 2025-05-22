@@ -10,13 +10,15 @@ library, which is a port of the original Haskell's Parsec library to Swfit.
 
 ## Installation
 
+Don't forget to install [Swift](https://www.swift.org/install) if you don't have it.
+
 ### Dependency for swift package manager
 
 To use this package inside another swift package,
  add the following dependency to your `Package.swift` file:
  ```Swift
 dependencies: [
-    .package(url: "https://github.com/Artem-Goldenberg/SwiftStella", from: "1.0.0")
+    .package(url: "https://github.com/Artem-Goldenberg/SwiftStella", from: "1.1.0")
 ],
  ```
  
@@ -40,7 +42,12 @@ After that, you can build the package or run tests using
 swift build
 swift test
 ```
-Don't forget to install [Swift](https://www.swift.org/install) if you don't have it.
+
+Also, if you want to quickly see the parse tree for some file, you can run
+```
+swift run QuickParse <your stella source file> 
+```
+It will print the serialized parse tree to the standard output.
 
 > For development version there is also a `TestGenerator` executable target, which
   parses current test files and prints serizlized program trees to the `printed-trees`

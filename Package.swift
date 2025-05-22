@@ -24,9 +24,12 @@ let package = Package(
             ]
         ),
         .executableTarget(
+            name: "QuickParse",
+            dependencies: ["Stella"]
+        ),
+        .executableTarget(
             name: "TestGenerator",
-            dependencies: ["Stella"],
-            swiftSettings: [.unsafeFlags(["-parse-as-library"])]
+            dependencies: ["Stella"]
         ),
         .testTarget(
             name: "StellaTests",
