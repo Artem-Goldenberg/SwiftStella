@@ -4,13 +4,13 @@
     ▿ Stella.LanguageExtension
       ▿ names: 4 elements
         ▿ Stella.LanguageExtension.Name
-          - value: "#letrec-bindings"
+          - value: "letrec-bindings"
         ▿ Stella.LanguageExtension.Name
-          - value: "#let-patterns"
+          - value: "let-patterns"
         ▿ Stella.LanguageExtension.Name
-          - value: "#pattern-ascriptions"
+          - value: "pattern-ascriptions"
         ▿ Stella.LanguageExtension.Name
-          - value: "#variants"
+          - value: "variants"
   ▿ declarations: 1 element
     ▿ Stella.Declaration.function
       ▿ function: (7 elements)

@@ -4,7 +4,7 @@
     ▿ Stella.LanguageExtension
       ▿ names: 1 element
         ▿ Stella.LanguageExtension.Name
-          - value: "#let-bindings"
+          - value: "let-bindings"
   ▿ declarations: 1 element
     ▿ Stella.Declaration.function
       ▿ function: (7 elements)

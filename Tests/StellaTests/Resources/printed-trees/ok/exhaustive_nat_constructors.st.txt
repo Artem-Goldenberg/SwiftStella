@@ -4,9 +4,9 @@
     ▿ Stella.LanguageExtension
       ▿ names: 2 elements
         ▿ Stella.LanguageExtension.Name
-          - value: "#structural-patterns"
+          - value: "structural-patterns"
         ▿ Stella.LanguageExtension.Name
-          - value: "#natural-literals"
+          - value: "natural-literals"
   ▿ declarations: 2 elements
     ▿ Stella.Declaration.function
       ▿ function: (7 elements)

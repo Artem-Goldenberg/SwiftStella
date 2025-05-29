@@ -4,7 +4,7 @@
     ▿ Stella.LanguageExtension
       ▿ names: 1 element
         ▿ Stella.LanguageExtension.Name
-          - value: "#records"
+          - value: "records"
   ▿ declarations: 2 elements
     ▿ Stella.Declaration.function
       ▿ function: (7 elements)

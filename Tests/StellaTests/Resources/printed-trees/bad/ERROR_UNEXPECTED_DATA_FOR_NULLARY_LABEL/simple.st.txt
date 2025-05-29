@@ -4,13 +4,13 @@
     ▿ Stella.LanguageExtension
       ▿ names: 4 elements
         ▿ Stella.LanguageExtension.Name
-          - value: "#structural-patterns"
+          - value: "structural-patterns"
         ▿ Stella.LanguageExtension.Name
-          - value: "#natural-literals"
+          - value: "natural-literals"
         ▿ Stella.LanguageExtension.Name
-          - value: "#variants"
+          - value: "variants"
         ▿ Stella.LanguageExtension.Name
-          - value: "#nullary-variant-labels"
+          - value: "nullary-variant-labels"
   ▿ declarations: 1 element
     ▿ Stella.Declaration.function
       ▿ function: (7 elements)

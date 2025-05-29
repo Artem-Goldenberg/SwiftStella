@@ -4,15 +4,15 @@
     ▿ Stella.LanguageExtension
       ▿ names: 1 element
         ▿ Stella.LanguageExtension.Name
-          - value: "#variants"
+          - value: "variants"
     ▿ Stella.LanguageExtension
       ▿ names: 1 element
         ▿ Stella.LanguageExtension.Name
-          - value: "#type-ascriptions"
+          - value: "type-ascriptions"
     ▿ Stella.LanguageExtension
       ▿ names: 1 element
         ▿ Stella.LanguageExtension.Name
-          - value: "#pairs"
+          - value: "pairs"
   ▿ declarations: 1 element
     ▿ Stella.Declaration.function
       ▿ function: (7 elements)

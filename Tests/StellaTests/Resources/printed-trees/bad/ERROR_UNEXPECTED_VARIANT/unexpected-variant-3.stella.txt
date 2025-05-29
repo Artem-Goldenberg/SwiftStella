@@ -4,11 +4,11 @@
     ▿ Stella.LanguageExtension
       ▿ names: 1 element
         ▿ Stella.LanguageExtension.Name
-          - value: "#lists"
+          - value: "lists"
     ▿ Stella.LanguageExtension
       ▿ names: 1 element
         ▿ Stella.LanguageExtension.Name
-          - value: "#variants"
+          - value: "variants"
   ▿ declarations: 2 elements
     ▿ Stella.Declaration.function
       ▿ function: (7 elements)
