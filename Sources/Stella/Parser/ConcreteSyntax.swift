@@ -113,39 +113,44 @@ enum Char: Character, Parsable, ExpressibleByUnicodeScalarLiteral {
 
 /// Also used to tokenize input
 struct CharGroup: Parsable {
-    let allowed: CharacterSet
+    let allowed: [CharacterSet]
     let description: String
 
-    init(allowed: CharacterSet, _ description: String) {
+    init(allowed: [CharacterSet], _ description: String) {
         self.allowed = allowed
         self.description = description
     }
 
     init(_ string: StringLiteralType, _ description: String) {
-        self.allowed = CharacterSet(string.unicodeScalars)
+        self.allowed = [CharacterSet(charactersIn: string)]
         self.description = description
     }
 
-    static let alphaNum = Self(allowed: .alphanumerics, "digit or a letter")
-    static let digit = Self(allowed: .decimalDigits, "digit")
+    static let alphaNum = Self(allowed: [.alphanumerics], "digit or a letter")
+    static let digit = Self(allowed: [.decimalDigits], "digit")
     static let hexDigit = Self("0123456789ABCDEFabcdef", "hexadecimal digit")
-    static let letter = Self(allowed: .letters, "letter")
+    static let letter = Self(allowed: [.letters], "letter")
 
     static func + (a: CharGroup, b: CharGroup) -> CharGroup {
-        CharGroup(allowed: a.allowed.union(b.allowed), a.description + " or " + b.description)
+        CharGroup(
+            allowed: a.allowed + b.allowed,
+            a.description + " or " + b.description
+        )
     }
 
     func with(_ characters: Unicode.Scalar...) -> CharGroup {
         let charsDescription = characters.map { "\"\($0)\"" }.joined(separator: " , ")
 
         return .init(
-            allowed: allowed.union(.init(characters)),
+            allowed: allowed.appending(CharacterSet(characters)),
             description + " or " + charsDescription
         )
     }
 
     var parser: Parser<Character> {
-        StringParser.memberOf(allowed) <?> description
+        allowed.reduce(.empty) { parser, set in
+            parser <|> StringParser.memberOf(set)
+        } <?> description
     }
 }
 
