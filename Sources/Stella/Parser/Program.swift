@@ -32,13 +32,11 @@ extension LanguageExtension: StaticParsable {
 
 extension LanguageExtension.Name: StaticParsable {
     public static let parser: Parser<Self> = rule {
-        Char.hash
+        Char.hash.parser.discard // don't propagate # to extension names
         CharGroup.alphaNum.with("-", "_").parser.many1
     }
         .lexeme // got to account for leading whitspaces as we are parsing raw chars
-        .map { (char, chars) in
-            String(chars.prepending(char))
-        }
+        .map { String($0) }
         .map(Self.init(value:)) <?> "extension name"
 }
 

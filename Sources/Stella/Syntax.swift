@@ -2,6 +2,8 @@
 /// This protocol is not really used, just a dummy to unite all abstract syntax nodes for documentation
 public protocol Syntax {
     static var documentingName: String { get }
+    /// Pretty-printed stella code from a syntax tree
+    var code: String { get }
 }
 
 /// Stella Identifier
