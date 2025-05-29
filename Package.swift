@@ -36,8 +36,9 @@ let package = Package(
             dependencies: ["Stella"],
             resources: [
                 .copy("Resources/stella-tests"),
-                .copy("Resources/printed-trees")
+                .copy("Resources/printed-trees"),
+                .copy("Resources/printed-code")
             ]
-        ),
+        )
     ]
 )
