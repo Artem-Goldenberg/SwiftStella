@@ -1,4 +1,4 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 5.4
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -26,18 +26,6 @@ let package = Package(
         .executableTarget(
             name: "QuickParse",
             dependencies: ["Stella"]
-        ),
-        .executableTarget(
-            name: "TestGenerator",
-            dependencies: ["Stella"]
-        ),
-        .testTarget(
-            name: "StellaTests",
-            dependencies: ["Stella"],
-            resources: [
-                .copy("Resources/stella-tests"),
-                .copy("Resources/printed-trees")
-            ]
         ),
     ]
 )

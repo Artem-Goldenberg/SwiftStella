@@ -1,5 +1,8 @@
 #  SwiftStella
 
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FArtem-Goldenberg%2FSwiftStella%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/Artem-Goldenberg/SwiftStella)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FArtem-Goldenberg%2FSwiftStella%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/Artem-Goldenberg/SwiftStella)
+
 Parser and data structures library for working with 
 the [stella](https://fizruk.github.io/stella/) language in Swift.
 
@@ -18,7 +21,7 @@ To use this package inside another swift package,
  add the following dependency to your `Package.swift` file:
  ```Swift
 dependencies: [
-    .package(url: "https://github.com/Artem-Goldenberg/SwiftStella", from: "1.1.0")
+    .package(url: "https://github.com/Artem-Goldenberg/SwiftStella.git", from: "1.1.0")
 ],
  ```
  

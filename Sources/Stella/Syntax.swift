@@ -5,7 +5,7 @@ public protocol Syntax {
 }
 
 /// Stella Identifier
-public struct Identifier: Syntax {
+public struct Identifier: Syntax, Hashable {
     public let value: String
     public static let documentingName = "identifier"
 }
@@ -34,8 +34,9 @@ public enum LanguageDeclaration: Syntax {
 public struct LanguageExtension: Syntax {
     public let names: [Name]
 
-    public struct Name {
+    public struct Name: Syntax, Hashable {
         public let value: String
+        public static let documentingName = "language extension name"
     }
 
     public static let documentingName = "language extension"
@@ -173,7 +174,7 @@ public indirect enum Pattern: Syntax {
 }
 
 /// Memory address in the form of `#...;`
-public struct MemoryAddress {
+public struct MemoryAddress: Hashable {
     public let value: String
 }
 
