@@ -1,23 +1,44 @@
 @preconcurrency import SwiftParsec
 
 extension Pattern: StaticParsable {
-    public static let parser: Parser<Self> = table.makeExpressionParser { pattern in
-        alternatives {
-            pattern.inParens // can be nested in meaningless parens
-//            ascription(using: thisParser)
-            variant(using: pattern)
-            call(of: .inl, mapping: Self.inl, with: pattern) <?> "left alternative"
-            call(of: .inr, mapping: Self.inr, with: pattern) <?> "right alternative"
-            call(of: .succ, mapping: Self.succ, with: pattern) <?> "succ pattern"
-            tupleOrRecordContents(
-                using: pattern, forTuple: Self.tuple, forRecord: Self.record,
-                descriptionSuffix: " pattern"
-            ).inBraces
-            list(using: pattern)
-            constructor(using: pattern)
-            basicPattern
+    public static let parser: Parser<Self> = .recursive { pattern in
+        rule {
+            commonPattern(using: pattern) <?> "pattern"
+            // like with term expression, first parse pattern, then
+            // try to parse arbitrary amount of `case as` or `as` casts
+            alternatives {
+                ascription(cast: true)
+                ascription(cast: false)
+            }.many
+        }.map { (pattern, casts) in // and here we can apply all casts nicely with reduce
+            casts.reduce(pattern) { $1($0) }
         }
     } <?> "pattern"
+
+    @AlternativesBuilder
+    static func commonPattern(using pattern: Parser<Self>) -> Parser<Self> {
+        pattern.inParens // can be nested in meaningless parens
+        variant(using: pattern)
+        call(of: .inl, mapping: Self.inl, with: pattern) <?> "left alternative"
+        call(of: .inr, mapping: Self.inr, with: pattern) <?> "right alternative"
+        call(of: .succ, mapping: Self.succ, with: pattern) <?> "succ pattern"
+        tupleOrRecordContents(
+            using: pattern, forTuple: Self.tuple, forRecord: Self.record,
+            descriptionSuffix: " pattern"
+        ).inBraces
+        list(using: pattern)
+        constructor(using: pattern)
+        basicPattern
+    }
+
+    @ParserBuilder
+    static func ascription(cast: Bool) -> Parser<(Self) -> Self> {
+        if cast { Keyword.cast }
+        Keyword.as
+        Type.self.map { type in
+            { (cast ? Self.cast : Self.ascription) ($0, type) }
+        } <?> "\(cast ? "cast" : "ascription") pattern"
+    }
 
     // to avoid recursion in the cast and ascription rules,
     // we need to parse patters like expressions with postfix operations
