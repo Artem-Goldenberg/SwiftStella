@@ -174,3 +174,19 @@ let stellaDefinition: LanguageDefinition<()> = {
 }()
 
 let lexer = GenericTokenParser(languageDefinition: stellaDefinition)
+
+
+// Parsec uses different CharacterSet on non-apple platforms
+// so we need to extend it to our needs
+
+#if !_runtime(_ObjC)
+
+import struct Foundation.CharacterSet
+
+extension CharacterSet {
+    public init(_ elements: [Unicode.Scalar]) {
+        self.init(Foundation.CharacterSet(elements))
+    }
+}
+
+#endif

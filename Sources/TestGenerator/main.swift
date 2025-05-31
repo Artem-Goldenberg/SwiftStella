@@ -11,7 +11,7 @@ do {
     quit(with: error.localizedDescription)
 }
 
-@MainActor func generate() throws {
+func generate() throws {
     guard fm.changeCurrentDirectoryPath("Tests/StellaTests/Resources") else {
         quit(with: "Failed to go to the resource directory")
     }
@@ -70,7 +70,7 @@ do {
     print("All Done ✅")
 }
 
-@MainActor func parseFile(at relativePath: String) throws {
+func parseFile(at relativePath: String) throws {
     if !relativePath.contains(".st") && relativePath != "ok/infer_cons" {
         print("Skipping '\(relativePath)'")
         return

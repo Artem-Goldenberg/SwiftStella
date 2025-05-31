@@ -40,5 +40,6 @@ let package = Package(
                 .copy("Resources/printed-code")
             ]
         )
-    ]
+    ],
+    swiftLanguageModes: [.v5]
 )
