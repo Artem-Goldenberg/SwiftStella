@@ -80,29 +80,8 @@ extension Type: Equatable {
 }
 
 extension Type: Hashable {
-    private var order: Int {
-        switch self {
-        case .auto: 1
-        case .bool: 2
-        case .nat: 3
-        case .unit: 4
-        case .top: 5
-        case .bottom: 6
-        case .variable: 7
-        case .function: 8
-        case .tuple: 9
-        case .record: 10
-        case .sum: 11
-        case .list: 12
-        case .variant: 13
-        case .forall: 14
-        case .µ: 15
-        case .reference: 16
-        }
-    }
-
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(self.order)
+        hasher.combine(self.erased)
         switch self {
         case .variable(let identifier):
             hasher.combine(identifier)
@@ -135,6 +114,48 @@ extension Type: Hashable {
         case .reference(let type):
             hasher.combine(type)
         default: return
+        }
+    }
+}
+
+extension Type {
+    public enum Erased {
+        case auto
+        case bool
+        case nat
+        case unit
+        case top
+        case bottom
+        case variable
+        case function
+        case tuple
+        case record
+        case sum
+        case list
+        case variant
+        case forall
+        case µ
+        case reference
+    }
+
+    public var erased: Erased {
+        switch self {
+        case .auto: .auto
+        case .bool: .bool
+        case .nat: .nat
+        case .unit: .unit
+        case .top: .top
+        case .bottom: .bottom
+        case .variable: .variable
+        case .function: .function
+        case .tuple: .tuple
+        case .record: .record
+        case .sum: .sum
+        case .list: .list
+        case .variant: .variant
+        case .forall: .forall
+        case .µ: .µ
+        case .reference: .reference
         }
     }
 }

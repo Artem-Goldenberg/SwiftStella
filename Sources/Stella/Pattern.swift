@@ -76,28 +76,8 @@ extension Pattern: Equatable {
 }
 
 extension Pattern: Hashable {
-    private var order: Int {
-        switch self {
-        case .cast: 1
-        case .ascription: 2
-        case .variant: 3
-        case .inl: 4
-        case .inr: 5
-        case .tuple: 6
-        case .record: 7
-        case .list: 8
-        case .cons: 9
-        case .false: 10
-        case .true: 11
-        case .unit: 12
-        case .int: 13
-        case .succ: 14
-        case .var: 15
-        }
-    }
-
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(self.order)
+        hasher.combine(self.erased)
         switch self {
         case .cast(let pattern, let `as`):
             hasher.combine(pattern)
@@ -131,6 +111,46 @@ extension Pattern: Hashable {
         case .var(let identifier):
             hasher.combine(identifier)
         default: return
+        }
+    }
+}
+
+extension Pattern {
+    public enum Erased {
+        case cast
+        case ascription
+        case variant
+        case inl
+        case inr
+        case tuple
+        case record
+        case list
+        case cons
+        case `false`
+        case `true`
+        case unit
+        case int
+        case succ
+        case `var`
+    }
+
+    public var erased: Erased {
+        switch self {
+        case .cast: .cast
+        case .ascription: .ascription
+        case .variant: .variant
+        case .inl: .inl
+        case .inr: .inr
+        case .tuple: .tuple
+        case .record: .record
+        case .list: .list
+        case .cons: .cons
+        case .false: .false
+        case .true: .true
+        case .unit: .unit
+        case .int: .int
+        case .succ: .succ
+        case .var: .var
         }
     }
 }
