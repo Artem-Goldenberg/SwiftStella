@@ -154,27 +154,6 @@ public indirect enum Expression: Syntax {
     public static let documentingName = "expression"
 }
 
-/// Enum for Stella's patterns
-public indirect enum Pattern: Syntax {
-    case cast(Pattern, as: Type)
-    case ascription(Pattern, Type)
-    case variant(Identifier, Pattern?)
-    case inl(Pattern)
-    case inr(Pattern)
-    case tuple([Pattern])
-    case record([(Identifier, Pattern)])
-    case list([Pattern])
-    case cons(Pattern, Pattern)
-    case `false`
-    case `true`
-    case unit
-    case int(Int)
-    case succ(Pattern)
-    case `var`(Identifier)
-
-    public static let documentingName = "pattern"
-}
-
 /// Memory address in the form of `#...;`
 public struct MemoryAddress: Hashable {
     public let value: String

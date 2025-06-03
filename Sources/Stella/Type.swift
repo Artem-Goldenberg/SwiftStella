@@ -78,3 +78,63 @@ extension Type: Equatable {
         }
     }
 }
+
+extension Type: Hashable {
+    private var order: Int {
+        switch self {
+        case .auto: 1
+        case .bool: 2
+        case .nat: 3
+        case .unit: 4
+        case .top: 5
+        case .bottom: 6
+        case .variable: 7
+        case .function: 8
+        case .tuple: 9
+        case .record: 10
+        case .sum: 11
+        case .list: 12
+        case .variant: 13
+        case .forall: 14
+        case .µ: 15
+        case .reference: 16
+        }
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(self.order)
+        switch self {
+        case .variable(let identifier):
+            hasher.combine(identifier)
+        case .function(let from, let to):
+            hasher.combine(from)
+            hasher.combine(to)
+        case .tuple(let array):
+            array.forEach { hasher.combine($0) }
+        case .record(let array):
+            array.forEach { (name, type) in
+                hasher.combine(name)
+                hasher.combine(type)
+            }
+        case .sum(let left, let right):
+            hasher.combine(left)
+            hasher.combine(right)
+        case .list(let of):
+            hasher.combine(of)
+        case .variant(let array):
+            array.forEach { (name, type) in
+                hasher.combine(name)
+                hasher.combine(type)
+            }
+        case .forall(let variables, let type):
+            hasher.combine(variables)
+            hasher.combine(type)
+        case .µ(let identifier, let type):
+            hasher.combine(identifier)
+            hasher.combine(type)
+        case .reference(let type):
+            hasher.combine(type)
+        default: return
+        }
+    }
+}
