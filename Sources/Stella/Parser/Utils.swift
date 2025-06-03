@@ -113,3 +113,18 @@ extension Expression?? {
         flatMap { $0 }
     }
 }
+
+// Parsec uses different CharacterSet on non-apple platforms
+// so we need to extend it to our needs
+
+#if !_runtime(_ObjC)
+
+import struct Foundation.CharacterSet
+
+extension SwiftParsec.CharacterSet {
+    public init(_ elements: [Unicode.Scalar]) {
+        self.init(Foundation.CharacterSet(elements))
+    }
+}
+
+#endif
