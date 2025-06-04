@@ -71,6 +71,8 @@ struct PrinterTests {
         )
     )
     func printerStability(sourceURL: URL, reprintURL: URL) async throws {
+        try #require(sourceURL.lastPathComponent == reprintURL.lastPathComponent)
+
         let sourceText = try String(contentsOf: sourceURL, encoding: .utf8)
         let controlReprintText = try String(contentsOf: reprintURL, encoding: .utf8)
 

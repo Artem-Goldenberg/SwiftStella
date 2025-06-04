@@ -1,0 +1,72 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  ▿ extensions: 1 element
+    ▿ Stella.LanguageExtension
+      ▿ names: 5 elements
+        ▿ Stella.LanguageExtension.Name
+          - value: "exceptions"
+        ▿ Stella.LanguageExtension.Name
+          - value: "exception-type-declaration"
+        ▿ Stella.LanguageExtension.Name
+          - value: "variants"
+        ▿ Stella.LanguageExtension.Name
+          - value: "structural-patterns"
+        ▿ Stella.LanguageExtension.Name
+          - value: "open-variant-exceptions"
+  ▿ declarations: 4 elements
+    ▿ Stella.Declaration.exceptionVariant
+      ▿ exceptionVariant: (2 elements)
+        ▿ name: Stella.Identifier
+          - value: "bool"
+        - type: Stella.Type.bool
+    ▿ Stella.Declaration.exceptionVariant
+      ▿ exceptionVariant: (2 elements)
+        ▿ name: Stella.Identifier
+          - value: "nat"
+        - type: Stella.Type.nat
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "fail"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "n"
+            - type: Stella.Type.nat
+        ▿ returnType: Optional(Stella.Type.bool)
+          - some: Stella.Type.bool
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.throw
+          ▿ throw: Stella.Expression.variant
+            ▿ variant: (2 elements)
+              ▿ .0: Stella.Identifier
+                - value: "bool"
+              ▿ .1: Optional(Stella.Expression.constTrue)
+                - some: Stella.Expression.constTrue
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "n"
+            - type: Stella.Type.nat
+        ▿ returnType: Optional(Stella.Type.bool)
+          - some: Stella.Type.bool
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.tryCatch
+          ▿ tryCatch: (3 elements)
+            - .0: Stella.Expression.constTrue
+            ▿ .1: Stella.Pattern.variant
+              ▿ variant: (2 elements)
+                ▿ .0: Stella.Identifier
+                  - value: "x"
+                ▿ .1: Optional(Stella.Pattern.int(1))
+                  ▿ some: Stella.Pattern.int
+                    - int: 1
+            - .2: Stella.Expression.constTrue

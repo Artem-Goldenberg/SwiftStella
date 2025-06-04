@@ -1,0 +1,72 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  ▿ extensions: 1 element
+    ▿ Stella.LanguageExtension
+      ▿ names: 3 elements
+        ▿ Stella.LanguageExtension.Name
+          - value: "sum-types"
+        ▿ Stella.LanguageExtension.Name
+          - value: "unit-type"
+        ▿ Stella.LanguageExtension.Name
+          - value: "type-reconstruction"
+  ▿ declarations: 2 elements
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "test"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "first"
+            - type: Stella.Type.auto
+        ▿ returnType: Optional(Stella.Type.auto)
+          - some: Stella.Type.auto
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.if
+          ▿ if: (3 elements)
+            ▿ condition: Stella.Expression.var
+              ▿ var: Stella.Identifier
+                - value: "first"
+            ▿ then: Stella.Expression.inl
+              ▿ inl: Stella.Expression.succ
+                ▿ succ: Stella.Expression.constInt
+                  - constInt: 0
+            ▿ else: Stella.Expression.inr
+              - inr: Stella.Expression.constUnit
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "input"
+            - type: Stella.Type.bool
+        ▿ returnType: Optional(Stella.Type.auto)
+          - some: Stella.Type.auto
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.match
+          ▿ match: (2 elements)
+            ▿ .0: Stella.Expression.var
+              ▿ var: Stella.Identifier
+                - value: "input"
+            ▿ .1: 2 elements
+              ▿ (2 elements)
+                ▿ .0: Stella.Pattern.inl
+                  ▿ inl: Stella.Pattern.var
+                    ▿ var: Stella.Identifier
+                      - value: "n"
+                ▿ .1: Stella.Expression.var
+                  ▿ var: Stella.Identifier
+                    - value: "n"
+              ▿ (2 elements)
+                ▿ .0: Stella.Pattern.inr
+                  ▿ inr: Stella.Pattern.var
+                    ▿ var: Stella.Identifier
+                      - value: "_"
+                ▿ .1: Stella.Expression.constInt
+                  - constInt: 0

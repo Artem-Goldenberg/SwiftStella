@@ -43,6 +43,8 @@ struct ParserTests {
         )
     )
     func parserStability(sourceURL: URL, treeURL: URL) async throws {
+        try #require(sourceURL.lastPathComponent + ".txt" == treeURL.lastPathComponent)
+
         let sourceText = try String(contentsOf: sourceURL, encoding: .utf8)
         let controlTreeText = try String(contentsOf: treeURL, encoding: .utf8)
 

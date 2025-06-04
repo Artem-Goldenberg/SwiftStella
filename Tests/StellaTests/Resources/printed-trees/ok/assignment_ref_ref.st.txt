@@ -1,0 +1,39 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  ▿ extensions: 1 element
+    ▿ Stella.LanguageExtension
+      ▿ names: 2 elements
+        ▿ Stella.LanguageExtension.Name
+          - value: "references"
+        ▿ Stella.LanguageExtension.Name
+          - value: "sequencing"
+  ▿ declarations: 1 element
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "n"
+            ▿ type: Stella.Type.reference
+              ▿ reference: Stella.Type.reference
+                - reference: Stella.Type.nat
+        ▿ returnType: Optional(Stella.Type.nat)
+          - some: Stella.Type.nat
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.sequence
+          ▿ sequence: (2 elements)
+            ▿ .0: Stella.Expression.assign
+              ▿ assign: (2 elements)
+                ▿ .0: Stella.Expression.deref
+                  ▿ deref: Stella.Expression.var
+                    ▿ var: Stella.Identifier
+                      - value: "n"
+                ▿ .1: Stella.Expression.constInt
+                  - constInt: 0
+            ▿ .1: Stella.Expression.succ
+              ▿ succ: Stella.Expression.constInt
+                - constInt: 0

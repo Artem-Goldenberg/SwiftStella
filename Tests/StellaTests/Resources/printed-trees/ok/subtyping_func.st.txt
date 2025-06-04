@@ -1,0 +1,40 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  ▿ extensions: 1 element
+    ▿ Stella.LanguageExtension
+      ▿ names: 4 elements
+        ▿ Stella.LanguageExtension.Name
+          - value: "natural-literals"
+        ▿ Stella.LanguageExtension.Name
+          - value: "top-type"
+        ▿ Stella.LanguageExtension.Name
+          - value: "bottom-type"
+        ▿ Stella.LanguageExtension.Name
+          - value: "structural-subtyping"
+  ▿ declarations: 1 element
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "b"
+            - type: Stella.Type.bool
+        ▿ returnType: Optional(Stella.Type.function(from: [Stella.Type.bool], to: Stella.Type.bool))
+          ▿ some: Stella.Type.function
+            ▿ function: (2 elements)
+              ▿ from: 1 element
+                - Stella.Type.bool
+              - to: Stella.Type.bool
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.abstraction
+          ▿ abstraction: (2 elements)
+            ▿ .0: 1 element
+              ▿ Stella.Declaration.Parameter
+                ▿ name: Stella.Identifier
+                  - value: "x"
+                - type: Stella.Type.top
+            - .1: Stella.Expression.constFalse

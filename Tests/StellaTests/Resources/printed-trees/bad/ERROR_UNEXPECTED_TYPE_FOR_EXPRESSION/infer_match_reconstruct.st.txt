@@ -1,0 +1,51 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  ▿ extensions: 1 element
+    ▿ Stella.LanguageExtension
+      ▿ names: 1 element
+        ▿ Stella.LanguageExtension.Name
+          - value: "type-reconstruction"
+  ▿ declarations: 1 element
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "n"
+            - type: Stella.Type.nat
+        ▿ returnType: Optional(Stella.Type.nat)
+          - some: Stella.Type.nat
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.application
+          ▿ application: (2 elements)
+            ▿ .0: Stella.Expression.abstraction
+              ▿ abstraction: (2 elements)
+                ▿ .0: 1 element
+                  ▿ Stella.Declaration.Parameter
+                    ▿ name: Stella.Identifier
+                      - value: "a"
+                    - type: Stella.Type.nat
+                ▿ .1: Stella.Expression.match
+                  ▿ match: (2 elements)
+                    ▿ .0: Stella.Expression.constInt
+                      - constInt: 0
+                    ▿ .1: 2 elements
+                      ▿ (2 elements)
+                        ▿ .0: Stella.Pattern.var
+                          ▿ var: Stella.Identifier
+                            - value: "x"
+                        ▿ .1: Stella.Expression.var
+                          ▿ var: Stella.Identifier
+                            - value: "x"
+                      ▿ (2 elements)
+                        ▿ .0: Stella.Pattern.var
+                          ▿ var: Stella.Identifier
+                            - value: "y"
+                        - .1: Stella.Expression.constTrue
+            ▿ .1: 1 element
+              ▿ Stella.Expression.constInt
+                - constInt: 0

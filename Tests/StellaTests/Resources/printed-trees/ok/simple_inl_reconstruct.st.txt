@@ -1,0 +1,42 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  ▿ extensions: 1 element
+    ▿ Stella.LanguageExtension
+      ▿ names: 2 elements
+        ▿ Stella.LanguageExtension.Name
+          - value: "type-reconstruction"
+        ▿ Stella.LanguageExtension.Name
+          - value: "sum-types"
+  ▿ declarations: 1 element
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "n"
+            - type: Stella.Type.nat
+        ▿ returnType: Optional(Stella.Type.sum(left: Stella.Type.nat, right: Stella.Type.nat))
+          ▿ some: Stella.Type.sum
+            ▿ sum: (2 elements)
+              - left: Stella.Type.nat
+              - right: Stella.Type.nat
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.application
+          ▿ application: (2 elements)
+            ▿ .0: Stella.Expression.abstraction
+              ▿ abstraction: (2 elements)
+                ▿ .0: 1 element
+                  ▿ Stella.Declaration.Parameter
+                    ▿ name: Stella.Identifier
+                      - value: "a"
+                    - type: Stella.Type.nat
+                ▿ .1: Stella.Expression.inl
+                  ▿ inl: Stella.Expression.constInt
+                    - constInt: 0
+            ▿ .1: 1 element
+              ▿ Stella.Expression.constInt
+                - constInt: 0

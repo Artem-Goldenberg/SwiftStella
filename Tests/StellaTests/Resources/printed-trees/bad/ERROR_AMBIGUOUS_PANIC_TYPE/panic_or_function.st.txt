@@ -1,0 +1,41 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  ▿ extensions: 1 element
+    ▿ Stella.LanguageExtension
+      ▿ names: 1 element
+        ▿ Stella.LanguageExtension.Name
+          - value: "panic"
+  ▿ declarations: 1 element
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "n"
+            - type: Stella.Type.nat
+        ▿ returnType: Optional(Stella.Type.nat)
+          - some: Stella.Type.nat
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.application
+          ▿ application: (2 elements)
+            ▿ .0: Stella.Expression.if
+              ▿ if: (3 elements)
+                - condition: Stella.Expression.constFalse
+                - then: Stella.Expression.panic
+                ▿ else: Stella.Expression.abstraction
+                  ▿ abstraction: (2 elements)
+                    ▿ .0: 1 element
+                      ▿ Stella.Declaration.Parameter
+                        ▿ name: Stella.Identifier
+                          - value: "x"
+                        - type: Stella.Type.nat
+                    ▿ .1: Stella.Expression.var
+                      ▿ var: Stella.Identifier
+                        - value: "x"
+            ▿ .1: 1 element
+              ▿ Stella.Expression.constInt
+                - constInt: 0

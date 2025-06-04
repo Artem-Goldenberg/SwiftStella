@@ -1,0 +1,81 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  ▿ extensions: 1 element
+    ▿ Stella.LanguageExtension
+      ▿ names: 1 element
+        ▿ Stella.LanguageExtension.Name
+          - value: "universal-types"
+  ▿ declarations: 2 elements
+    ▿ Stella.Declaration.genericFunction
+      ▿ genericFunction: (8 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "const"
+        ▿ typeVariables: 2 elements
+          ▿ Stella.Identifier
+            - value: "X"
+          ▿ Stella.Identifier
+            - value: "Y"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "x"
+            ▿ type: Stella.Type.variable
+              ▿ variable: Stella.Identifier
+                - value: "X"
+        ▿ returnType: Optional(Stella.Type.function(from: [Stella.Type.variable(Stella.Identifier(value: "Y"))], to: Stella.Type.variable(Stella.Identifier(value: "X"))))
+          ▿ some: Stella.Type.function
+            ▿ function: (2 elements)
+              ▿ from: 1 element
+                ▿ Stella.Type.variable
+                  ▿ variable: Stella.Identifier
+                    - value: "Y"
+              ▿ to: Stella.Type.variable
+                ▿ variable: Stella.Identifier
+                  - value: "X"
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.abstraction
+          ▿ abstraction: (2 elements)
+            ▿ .0: 1 element
+              ▿ Stella.Declaration.Parameter
+                ▿ name: Stella.Identifier
+                  - value: "y"
+                ▿ type: Stella.Type.variable
+                  ▿ variable: Stella.Identifier
+                    - value: "Y"
+            ▿ .1: Stella.Expression.var
+              ▿ var: Stella.Identifier
+                - value: "x"
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "x"
+            - type: Stella.Type.nat
+        ▿ returnType: Optional(Stella.Type.nat)
+          - some: Stella.Type.nat
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.application
+          ▿ application: (2 elements)
+            ▿ .0: Stella.Expression.application
+              ▿ application: (2 elements)
+                ▿ .0: Stella.Expression.typeApplication
+                  ▿ typeApplication: (2 elements)
+                    ▿ .0: Stella.Expression.var
+                      ▿ var: Stella.Identifier
+                        - value: "const"
+                    ▿ .1: 2 elements
+                      - Stella.Type.nat
+                      - Stella.Type.bool
+                ▿ .1: 1 element
+                  ▿ Stella.Expression.var
+                    ▿ var: Stella.Identifier
+                      - value: "x"
+            ▿ .1: 1 element
+              - Stella.Expression.constFalse

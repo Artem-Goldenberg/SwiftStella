@@ -1,0 +1,134 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  ▿ extensions: 1 element
+    ▿ Stella.LanguageExtension
+      ▿ names: 1 element
+        ▿ Stella.LanguageExtension.Name
+          - value: "type-reconstruction"
+  ▿ declarations: 3 elements
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "Nat::add"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "n"
+            - type: Stella.Type.auto
+        ▿ returnType: Optional(Stella.Type.auto)
+          - some: Stella.Type.auto
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.abstraction
+          ▿ abstraction: (2 elements)
+            ▿ .0: 1 element
+              ▿ Stella.Declaration.Parameter
+                ▿ name: Stella.Identifier
+                  - value: "m"
+                - type: Stella.Type.auto
+            ▿ .1: Stella.Expression.natRec
+              ▿ natRec: (3 elements)
+                ▿ .0: Stella.Expression.var
+                  ▿ var: Stella.Identifier
+                    - value: "n"
+                ▿ .1: Stella.Expression.var
+                  ▿ var: Stella.Identifier
+                    - value: "m"
+                ▿ .2: Stella.Expression.abstraction
+                  ▿ abstraction: (2 elements)
+                    ▿ .0: 1 element
+                      ▿ Stella.Declaration.Parameter
+                        ▿ name: Stella.Identifier
+                          - value: "i"
+                        - type: Stella.Type.auto
+                    ▿ .1: Stella.Expression.abstraction
+                      ▿ abstraction: (2 elements)
+                        ▿ .0: 1 element
+                          ▿ Stella.Declaration.Parameter
+                            ▿ name: Stella.Identifier
+                              - value: "r"
+                            - type: Stella.Type.auto
+                        ▿ .1: Stella.Expression.succ
+                          ▿ succ: Stella.Expression.var
+                            ▿ var: Stella.Identifier
+                              - value: "r"
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "square"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "n"
+            - type: Stella.Type.auto
+        ▿ returnType: Optional(Stella.Type.auto)
+          - some: Stella.Type.auto
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.natRec
+          ▿ natRec: (3 elements)
+            ▿ .0: Stella.Expression.var
+              ▿ var: Stella.Identifier
+                - value: "n"
+            ▿ .1: Stella.Expression.constInt
+              - constInt: 0
+            ▿ .2: Stella.Expression.abstraction
+              ▿ abstraction: (2 elements)
+                ▿ .0: 1 element
+                  ▿ Stella.Declaration.Parameter
+                    ▿ name: Stella.Identifier
+                      - value: "i"
+                    - type: Stella.Type.auto
+                ▿ .1: Stella.Expression.application
+                  ▿ application: (2 elements)
+                    ▿ .0: Stella.Expression.application
+                      ▿ application: (2 elements)
+                        ▿ .0: Stella.Expression.var
+                          ▿ var: Stella.Identifier
+                            - value: "Nat::add"
+                        ▿ .1: 1 element
+                          ▿ Stella.Expression.var
+                            ▿ var: Stella.Identifier
+                              - value: "i"
+                    ▿ .1: 1 element
+                      ▿ Stella.Expression.application
+                        ▿ application: (2 elements)
+                          ▿ .0: Stella.Expression.application
+                            ▿ application: (2 elements)
+                              ▿ .0: Stella.Expression.var
+                                ▿ var: Stella.Identifier
+                                  - value: "Nat::add"
+                              ▿ .1: 1 element
+                                ▿ Stella.Expression.var
+                                  ▿ var: Stella.Identifier
+                                    - value: "i"
+                          ▿ .1: 1 element
+                            ▿ Stella.Expression.succ
+                              ▿ succ: Stella.Expression.var
+                                ▿ var: Stella.Identifier
+                                  - value: "i"
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "n"
+            - type: Stella.Type.auto
+        ▿ returnType: Optional(Stella.Type.auto)
+          - some: Stella.Type.auto
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.application
+          ▿ application: (2 elements)
+            ▿ .0: Stella.Expression.var
+              ▿ var: Stella.Identifier
+                - value: "square"
+            ▿ .1: 1 element
+              ▿ Stella.Expression.var
+                ▿ var: Stella.Identifier
+                  - value: "n"

@@ -1,0 +1,38 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  ▿ extensions: 1 element
+    ▿ Stella.LanguageExtension
+      ▿ names: 5 elements
+        ▿ Stella.LanguageExtension.Name
+          - value: "tuples"
+        ▿ Stella.LanguageExtension.Name
+          - value: "natural-literals"
+        ▿ Stella.LanguageExtension.Name
+          - value: "top-type"
+        ▿ Stella.LanguageExtension.Name
+          - value: "bottom-type"
+        ▿ Stella.LanguageExtension.Name
+          - value: "structural-subtyping"
+  ▿ declarations: 1 element
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "n"
+            - type: Stella.Type.nat
+        ▿ returnType: Optional(Stella.Type.tuple([Stella.Type.nat, Stella.Type.bool]))
+          ▿ some: Stella.Type.tuple
+            ▿ tuple: 2 elements
+              - Stella.Type.nat
+              - Stella.Type.bool
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.tuple
+          ▿ tuple: 2 elements
+            - Stella.Expression.constTrue
+            ▿ Stella.Expression.constInt
+              - constInt: 12

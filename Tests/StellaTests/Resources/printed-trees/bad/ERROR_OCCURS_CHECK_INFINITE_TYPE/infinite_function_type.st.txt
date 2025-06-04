@@ -1,0 +1,31 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  ▿ extensions: 1 element
+    ▿ Stella.LanguageExtension
+      ▿ names: 1 element
+        ▿ Stella.LanguageExtension.Name
+          - value: "type-reconstruction"
+  ▿ declarations: 1 element
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "f"
+            - type: Stella.Type.auto
+        ▿ returnType: Optional(Stella.Type.auto)
+          - some: Stella.Type.auto
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.application
+          ▿ application: (2 elements)
+            ▿ .0: Stella.Expression.var
+              ▿ var: Stella.Identifier
+                - value: "f"
+            ▿ .1: 1 element
+              ▿ Stella.Expression.var
+                ▿ var: Stella.Identifier
+                  - value: "f"

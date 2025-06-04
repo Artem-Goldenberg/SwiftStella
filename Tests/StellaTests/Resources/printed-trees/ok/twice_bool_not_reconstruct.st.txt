@@ -1,0 +1,98 @@
+▿ Stella.Program
+  - languageDeclaration: Stella.LanguageDeclaration.languageCore
+  ▿ extensions: 1 element
+    ▿ Stella.LanguageExtension
+      ▿ names: 1 element
+        ▿ Stella.LanguageExtension.Name
+          - value: "type-reconstruction"
+  ▿ declarations: 3 elements
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "Bool::not"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "b"
+            - type: Stella.Type.auto
+        ▿ returnType: Optional(Stella.Type.auto)
+          - some: Stella.Type.auto
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.if
+          ▿ if: (3 elements)
+            ▿ condition: Stella.Expression.var
+              ▿ var: Stella.Identifier
+                - value: "b"
+            - then: Stella.Expression.constFalse
+            - else: Stella.Expression.constTrue
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "twice"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "f"
+            ▿ type: Stella.Type.function
+              ▿ function: (2 elements)
+                ▿ from: 1 element
+                  - Stella.Type.auto
+                - to: Stella.Type.auto
+        ▿ returnType: Optional(Stella.Type.auto)
+          - some: Stella.Type.auto
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.abstraction
+          ▿ abstraction: (2 elements)
+            ▿ .0: 1 element
+              ▿ Stella.Declaration.Parameter
+                ▿ name: Stella.Identifier
+                  - value: "x"
+                - type: Stella.Type.auto
+            ▿ .1: Stella.Expression.application
+              ▿ application: (2 elements)
+                ▿ .0: Stella.Expression.var
+                  ▿ var: Stella.Identifier
+                    - value: "f"
+                ▿ .1: 1 element
+                  ▿ Stella.Expression.application
+                    ▿ application: (2 elements)
+                      ▿ .0: Stella.Expression.var
+                        ▿ var: Stella.Identifier
+                          - value: "f"
+                      ▿ .1: 1 element
+                        ▿ Stella.Expression.var
+                          ▿ var: Stella.Identifier
+                            - value: "x"
+    ▿ Stella.Declaration.function
+      ▿ function: (7 elements)
+        - annotations: 0 elements
+        ▿ name: Stella.Identifier
+          - value: "main"
+        ▿ parameters: 1 element
+          ▿ Stella.Declaration.Parameter
+            ▿ name: Stella.Identifier
+              - value: "b"
+            - type: Stella.Type.auto
+        ▿ returnType: Optional(Stella.Type.auto)
+          - some: Stella.Type.auto
+        - throwTypes: 0 elements
+        - body: 0 elements
+        ▿ return: Stella.Expression.application
+          ▿ application: (2 elements)
+            ▿ .0: Stella.Expression.application
+              ▿ application: (2 elements)
+                ▿ .0: Stella.Expression.var
+                  ▿ var: Stella.Identifier
+                    - value: "twice"
+                ▿ .1: 1 element
+                  ▿ Stella.Expression.var
+                    ▿ var: Stella.Identifier
+                      - value: "Bool::not"
+            ▿ .1: 1 element
+              ▿ Stella.Expression.var
+                ▿ var: Stella.Identifier
+                  - value: "b"
