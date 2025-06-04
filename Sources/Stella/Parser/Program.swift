@@ -25,7 +25,7 @@ extension LanguageExtension: StaticParsable {
         Keyword.with
         LanguageExtension.Name.parser
             .commaSeparated
-            .map(Self.init(names:))
+            .map(Self.init(with:))
         Sign.semicolon
     } <?> "extension declaration"
 }
@@ -37,18 +37,18 @@ extension LanguageExtension.Name: StaticParsable {
     }
         .lexeme // got to account for leading whitspaces as we are parsing raw chars
         .map { String($0) }
-        .map(Self.init(value:)) <?> "extension name"
+        .map(Self.init(_:)) <?> "extension name"
 }
 
 extension Identifier: StaticParsable {
-    public static let parser: Parser<Self> = lexer.identifier.map(Self.init(value:))
+    public static let parser: Parser<Self> = lexer.identifier.map(Self.init(_:))
 }
 
 extension MemoryAddress: StaticParsable {
     public static let parser: Parser<Self> = rule {
         Sign.hexStart
         CharGroup.hexDigit.parser.many1
-    }.inAngles.map { Self.init(value: String($0)) } <?> "memory address"
+    }.inAngles.map { Self.init(String($0)) } <?> "memory address"
 }
 
 extension Declaration: StaticParsable {

@@ -10,6 +10,10 @@ public protocol Syntax {
 public struct Identifier: Syntax, Hashable {
     public let value: String
     public static let documentingName = "identifier"
+    /// Public initializer to create artificial identifiers for comparison with the program ones
+    public init(_ value: String) {
+        self.value = value
+    }
 }
 
 /**
@@ -21,6 +25,17 @@ public struct Program: Syntax {
     public let languageDeclaration: LanguageDeclaration
     public let extensions: [LanguageExtension]
     public let declarations: [Declaration]
+
+    /// Public initializer so users can create artificial programs if they want
+    public init(
+        languageDeclaration: LanguageDeclaration,
+        extensions: [LanguageExtension],
+        declarations: [Declaration]
+    ) {
+        self.languageDeclaration = languageDeclaration
+        self.extensions = extensions
+        self.declarations = declarations
+    }
 
     public static let documentingName = "program"
 }
@@ -36,9 +51,17 @@ public enum LanguageDeclaration: Syntax {
 public struct LanguageExtension: Syntax {
     public let names: [Name]
 
+    public init(with names: [Name]) {
+        self.names = names
+    }
+
     public struct Name: Syntax, Hashable {
         public let value: String
         public static let documentingName = "language extension name"
+
+        public init(_ value: String) {
+            self.value = value
+        }
     }
 
     public static let documentingName = "language extension"
@@ -157,6 +180,9 @@ public indirect enum Expression: Syntax {
 /// Memory address in the form of `#...;`
 public struct MemoryAddress: Hashable {
     public let value: String
+    public init(_ value: String) {
+        self.value = value
+    }
 }
 
 extension Syntax {
