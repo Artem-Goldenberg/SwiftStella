@@ -129,7 +129,8 @@ extension Stella.Expression: StaticParsable {
     static func ascription(cast: Bool) -> Parser<(Self) -> Self> {
         if cast { Keyword.cast }
         Keyword.as
-        Type.basicType(using: Type.parser).map { type in
+        // techinacally it should be Type2, but now just leave as a full type
+        Type.self.map { type in
             { (cast ? Self.typeCast : Self.typeAscription) ($0, type) }
         } <?> "type \(cast ? "cast" : "ascription")"
     }

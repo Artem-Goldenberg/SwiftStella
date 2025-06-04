@@ -14,14 +14,16 @@ extension Stella.`Type`: StaticParsable {
         }
     } <?> "type"
 
-    // operators on types, in decreasing priority
+    // operators on types (it's just + really)
     static let operatorTable: OperatorTable<Source, (), Type> = [
-        [ .prefix(Sign.ampersand.map { Self.reference } <?> "reference type") ],
         [ .infix(Sign.plus.map { Self.sum } <?> "sum type", .none) ],
     ]
 
     @AlternativesBuilder
-    static func basicType(using typeParser: Parser<Self>) -> Parser<Self> {
+    static func basicType(
+        using typeParser: Parser<Self>,
+        enclosed: Parser<Self>
+    ) -> Parser<Self> {
         typeParser.inParens
 
         tupleOrRecordContents(
@@ -50,13 +52,18 @@ extension Stella.`Type`: StaticParsable {
         Keyword.Top .map { Self.top    } <?> "top type"
         Keyword.Bot .map { Self.bottom } <?> "bot type"
 
+        rule { // &T
+            Sign.ampersand
+            enclosed
+        }.map(Self.reference) <?> "reference type"
+
         Identifier.map(Self.variable) <?> "type variable"
     }
 
     // parsec provides tools for quickly parsing expressions
     static func typeExpression(using typeParser: Parser<Self>) -> Parser<Self> {
-        operatorTable.makeExpressionParser { _ in
-            basicType(using: typeParser)
+        operatorTable.makeExpressionParser { enclosedParser in
+            basicType(using: typeParser, enclosed: enclosedParser)
         }
     }
 

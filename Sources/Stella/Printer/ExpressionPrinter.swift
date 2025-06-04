@@ -75,7 +75,7 @@ extension Expression {
             // formally in here and in the next one, only type2 allowed, but don't care
             "\(expression.code(on: 3)) as \(type.code)"
         case .typeCast(let expression, let type):
-            "\(expression.code(on: 3)) as \(type.code)"
+            "\(expression.code(on: 3)) cast as \(type.code)"
         case .abstraction(let params, let expression):
             """
             fn(\(params.map(\.code).joined(separator: ", "))) {

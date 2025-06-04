@@ -22,7 +22,7 @@ To use this package inside another swift package,
  add the following dependency to your `Package.swift` file:
  ```Swift
 dependencies: [
-    .package(url: "https://github.com/Artem-Goldenberg/SwiftStella.git", from: "1.2.0")
+    .package(url: "https://github.com/Artem-Goldenberg/SwiftStella.git", from: "1.2.1")
 ],
  ```
  

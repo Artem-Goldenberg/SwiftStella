@@ -170,6 +170,9 @@ let stellaDefinition: LanguageDefinition<()> = {
     stella.reservedNames = Set(Keyword.allCases.map(\.rawValue))
     stella.reservedOperators = Set(Sign.allCases.map(\.rawValue))
 
+    // don't confuse operators written one after another as some custom operator
+    stella.operatorLetter = .empty
+
     return stella
 }()
 

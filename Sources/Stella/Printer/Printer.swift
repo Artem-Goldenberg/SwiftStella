@@ -118,7 +118,7 @@ extension Declaration {
         ):
             """
             \(annotations.map(\.code).joined(separator: " "))\
-            fn \(name.code)[\(typeVariables.map(\.code).joined(separator: ", "))]\
+            generic fn \(name.code)[\(typeVariables.map(\.code).joined(separator: ", "))]\
             (\(parameters.map(\.code).joined(separator: ", "))) \
             \(functionReturnAndBody(returnType, throwTypes, body, `return`))
             """
@@ -245,6 +245,6 @@ fileprivate extension Type {
 
 extension MemoryAddress {
     public var code: String {
-        value
+        "<0x\(value)>"
     }
 }
